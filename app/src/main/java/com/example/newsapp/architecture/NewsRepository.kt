@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.newsapp.BuildConfig
 import com.example.newsapp.MainActivity
 import com.example.newsapp.NewsModel
 import com.example.newsapp.retrofit.NewsApi
@@ -58,7 +57,7 @@ class NewsRepository {
         val newsList = MutableLiveData<List<NewsModel>>()
 
         val call = RetrofitHelper.getInstance().create(NewsApi::class.java)
-            .getNews("us", category, BuildConfig.API_KEY) //put your api key here
+            .getNews("us", category, "0828553764fc42f4a64dcbd85b68337e") //put your api key here
 
         call.enqueue(object : Callback<NewsDataFromJson> {
             override fun onResponse(
